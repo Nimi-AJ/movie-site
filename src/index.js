@@ -1,17 +1,46 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDom from 'react-dom';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+function MovieList() {
+  return (
+    <section className="booklist">
+      <Movie/>  
+      <Movie/>  
+      <Movie/>  
+      <Movie/>  
+      <Movie/>  
+      <Movie/>  
+      <Movie/>  
+    </section>
+  );
+  
+}
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+const Movie = () => {
+  return(
+    <article>
+      <Image/>
+      <Title/>
+      <Genre/>  
+    </article>
+  );
+}
+const Image = () => {
+  return(
+    <img src="https://a.ltrbxd.com/resized/film-poster/4/5/0/3/3/7/450337-a-quiet-place-part-ii-0-230-0-345-crop.jpg?k=90176ef700" alt=""/>
+  );
+}
+
+const Title = () => {
+  return(
+    <h3>A Quiet Place</h3>
+  )
+}
+
+const Genre = () => {
+  return(
+    <h3>Horror, Thriller</h3>
+  )
+}
+ReactDom.render(<MovieList />, document.getElementById('root'))
